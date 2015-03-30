@@ -1,0 +1,13 @@
+<h1>Posts</h1>
+
+<%= render 'form' %>
+
+<% if @posts.any? %>
+  <ul>
+    <% @posts.each do |post| %>
+      <li><%= post.body %></li>
+      <% end %>
+  </ul>
+<% else %>
+  <h3> No posts yet! </h3>
+<% end %>
