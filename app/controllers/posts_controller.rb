@@ -11,8 +11,12 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
+      respond_to do |format|
+        format.html { redirect_to posts_path }
+        format.js
+      end
       flash[:notice] = "Post successfully added!"
-      redirect_to posts_path
+
     else
       flash[:alert] = "There was a problem creating your post."
       redirect_to posts_path

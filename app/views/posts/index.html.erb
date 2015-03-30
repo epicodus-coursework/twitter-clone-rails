@@ -5,10 +5,10 @@
 <% end %>
 
 <% if @posts.any? %>
-  <ul>
+  <ul id="posts">
     <% @posts.each do |post| %>
-      <li><%= post.body %></li>
-      <% end %>
+      <%= render post %>
+    <% end %>
   </ul>
 <% else %>
   <h3> No posts yet! </h3>
