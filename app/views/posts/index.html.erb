@@ -1,6 +1,8 @@
 <h1>Posts</h1>
 
-<%= render 'form' %>
+<% if current_user %>
+  <%= render 'form' %>
+<% end %>
 
 <% if @posts.any? %>
   <ul>
