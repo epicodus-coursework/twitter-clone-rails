@@ -1,10 +1,14 @@
 require 'rails_helper'
-  describe "the creating post process" do
-    it "allows a user to create a post" do
-      FactoryGirl.create(:user)
-      visit "/"
-      fill_in "New Post", :with => "Lets talk about matts pong game"
-      click_on "Tweeet"
-      expect(page).to have_content "successfully"
-    end
+describe "the creating post process" do
+  let(:user) { FactoryGirl.create(:user) }
+
+  before do
+    sign_in(user)
   end
+
+  it "allows a user to create a post", js: true do
+    fill_in "New Post", :with => "Lets talk about matts pong game"
+    click_on "Tweeet"
+    expect(page).to have_content "matts pong game"
+  end
+end

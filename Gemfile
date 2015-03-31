@@ -23,9 +23,11 @@ end
 group :test, :development do
   gem 'pry'
   gem 'rspec-rails'
+  gem 'database_cleaner'
 end
 
 group :test do
   gem 'shoulda-matchers'
   gem 'capybara'
+  gem 'poltergeist'
 end
