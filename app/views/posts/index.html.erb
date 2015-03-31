@@ -4,11 +4,15 @@
   <%= render 'form' %>
 <% end %>
 
+<h3>All Tweets</h3>
+
 <% if @posts.any? %>
-  <ul id="posts">
-    <% @posts.each do |post| %>
-      <%= render post %>
-    <% end %>
+  <ul id="posts", class="list-unstyled">
+    <div class="well">
+      <% @posts.each do |post| %>
+        <%= render post %>
+      <% end %>
+    </div>
   </ul>
 <% else %>
   <h3> No posts yet! </h3>

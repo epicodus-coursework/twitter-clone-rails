@@ -1,5 +1,5 @@
 <%= form_for @post, remote: true do |f| %>
   <%= f.label :body, "New Post" %>
-  <%= f.text_area :body %>
-  <%= f.submit "Tweeet" %>
+  <%= f.text_area :body, class: "form-control" %>
+  <%= f.submit "Tweeet", class: "btn btn-primary" %>
 <% end %>
