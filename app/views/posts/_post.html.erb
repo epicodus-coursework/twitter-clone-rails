@@ -1,11 +1,11 @@
 
-<div class="well">
-  <li>
+<li id="edit_post_<%= post.id %>">
+  <div class="well">
     <%= post.body %>
       <% if (current_user != nil && current_user.id === post.user_id) %>
       <%= link_to 'Delete', user_post_path(current_user, post),
                                           :data => {:confirm => "def NOOOO",
-                                                    :method => "delete"}%>
+                                                    :method => "delete"}, remote: true %>
       <% end %>
-  </li>
-</div>
+    </div>
+</li>
