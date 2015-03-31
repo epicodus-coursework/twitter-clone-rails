@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @posts = Post.order("created_at DESC")
     @post = Post.new
   end
 
@@ -17,7 +17,6 @@ class PostsController < ApplicationController
         format.js
       end
       flash[:notice] = "Post successfully added!"
-
     else
       flash[:alert] = "There was a problem creating your post."
       redirect_to posts_path

@@ -1,4 +1,4 @@
-<h1>Posts</h1>
+<h1>Sea Foam Green</h1>
 
 <% if current_user %>
   <%= render 'form' %>
@@ -6,14 +6,8 @@
 
 <h3>All Tweets</h3>
 
-<% if @posts.any? %>
-  <ul id="posts", class="list-unstyled">
-    <div class="well">
-      <% @posts.each do |post| %>
-        <%= render post %>
-      <% end %>
-    </div>
-  </ul>
-<% else %>
-  <h3> No posts yet! </h3>
-<% end %>
+<ul id="posts", class="list-unstyled">
+  <% @posts.each do |post| %>
+      <%= render post %>
+  <% end %>
+</ul>

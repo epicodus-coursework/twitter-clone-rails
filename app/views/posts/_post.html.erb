@@ -1,8 +1,11 @@
 
-  <li><%= post.body %>
-    <% if (current_user != nil && current_user.id === post.user_id) %>
-    <%= link_to 'Delete', user_post_path(current_user, post),
-                                        :data => {:confirm => "def NOOOO",
-                                                  :method => "delete"}%>
-    <% end %>
-    </li>
+<div class="well">
+  <li>
+    <%= post.body %>
+      <% if (current_user != nil && current_user.id === post.user_id) %>
+      <%= link_to 'Delete', user_post_path(current_user, post),
+                                          :data => {:confirm => "def NOOOO",
+                                                    :method => "delete"}%>
+      <% end %>
+  </li>
+</div>
